@@ -17,12 +17,12 @@ export class UsersService {
   }
 
   async findAll() {
-    const allUsers = await this.userModel.find();
+    const allUsers = await this.userModel.find().select('-password');
     return allUsers;
   }
 
   async findOne(_id: string) {
-    const user = await this.userModel.findById(_id);
+    const user = await this.userModel.findById(_id).select('-password');
     return user;
   }
 
@@ -33,12 +33,14 @@ export class UsersService {
 
   async update(_id: string, updateUserDto: UpdateUserDto) {
     await this.userModel.findByIdAndUpdate(_id, updateUserDto);
-    const updatedUser = await this.userModel.findById(_id);
+    const updatedUser = await this.userModel.findById(_id).select('-password');
     return updatedUser;
   }
 
   async remove(_id: string) {
-    const deletedUser = await this.userModel.findByIdAndDelete(_id);
+    const deletedUser = await this.userModel
+      .findByIdAndDelete(_id)
+      .select('-password');
     return deletedUser;
   }
 }
