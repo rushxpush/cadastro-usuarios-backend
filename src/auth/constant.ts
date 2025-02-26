@@ -1,0 +1,4 @@
+export const jwtConstants = {
+  secret:
+    'TEMPORARY VALUE. FOR PRODUCTION, CREATE A COMPLEX SECRET AND DONT STORE IT IN THE SOURCE CODE',
+};
