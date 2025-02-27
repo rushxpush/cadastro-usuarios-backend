@@ -8,7 +8,7 @@ services:
       # MONGO_INITDB_ROOT_PASSWORD: example
       MONGO_INITDB_DATABASE: cadastro-usuarios # Ensure this matches the DB in init.js
     ports:
-      - "27017:27017"
+      - "27020:27017"
     volumes:
       - mongodb_data:/data/db
       - ./mongo-init/:/docker-entrypoint-initdb.d/ # Mounts init.js

@@ -8,7 +8,7 @@ import { AuthGuard } from './auth/auth.guard';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://mongo:27017/cadastro-usuarios'),
+    MongooseModule.forRoot('mongodb://mongo:27020/cadastro-usuarios'),
     UsersModule,
     AuthModule,
   ],
