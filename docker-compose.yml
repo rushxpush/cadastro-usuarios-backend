@@ -19,7 +19,7 @@ services:
     restart: always
     depends_on:
       - mongodb
-    environment:
+    # environment:
       # MONGO_URI: "mongodb://root:example@mongodb:27017/cadastro-usuarios?authSource=admin"
 
 volumes:
