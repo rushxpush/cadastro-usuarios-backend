@@ -3,12 +3,12 @@ services:
     image: mongo
     container_name: my-mongo
     restart: always
-    environment:
-      # MONGO_INITDB_ROOT_USERNAME: root
-      # MONGO_INITDB_ROOT_PASSWORD: example
-      MONGO_INITDB_DATABASE: cadastro-usuarios # Ensure this matches the DB in init.js
+    # environment:
+    #   # MONGO_INITDB_ROOT_USERNAME: root
+    #   # MONGO_INITDB_ROOT_PASSWORD: example
+    #   MONGO_INITDB_DATABASE: cadastro-usuarios # Ensure this matches the DB in init.js
     ports:
-      - "27020:27017"
+      - "27017:27017"
     volumes:
       - mongodb_data:/data/db
       - ./mongo-init/:/docker-entrypoint-initdb.d/ # Mounts init.js
@@ -21,8 +21,8 @@ services:
       - mongodb
     ports:
       - '3000:3000'
-    # environment:
-      # MONGO_URI: "mongodb://root:example@mongodb:27017/cadastro-usuarios?authSource=admin"
+    environment:
+      MONGO_URI: "mongodb://mongodb:27017/cadastro-usuarios"
 
 volumes:
   mongodb_data:
