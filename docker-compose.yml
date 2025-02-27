@@ -22,7 +22,7 @@ services:
     ports:
       - '3000:3000'
     environment:
-      MONGO_URI: "mongodb://mongodb:27017/cadastro-usuarios"
+      MONGO_URI: "mongodb://my-mongo:27030/cadastro-usuarios"
 
 volumes:
   mongodb_data:
